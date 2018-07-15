@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="topHeader" class="fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <nav class="navbar navbar-expand-md">
+                        <a href="#" class=" ">
+                            <img src="images/logo.svg" class="image-fluid  navbar-brand logoImg" alt="">
+                        </a>
+                        <button type="button" class="btn btn-info leftBtn">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                    <nav class="navbar navbar-expand-md">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Settings</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-4">
+                    <nav class="navbar navbar-expand-md">
+                        <ul class="nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="far fa-bell"></i>
+                                    <span class="badge badge-pill badge-danger">5</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-header text-center">
+                                        <b>You have 5 notifications</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-user-plus text-success"></i>
+                                        New user registered
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-user-times text-danger"></i>
+                                        User deleted
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-chart-bar text-info"></i>
+                                        Sales report is ready
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-cart-plus text-primary"></i>
+                                        New client
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-tachometer-alt text-warning"></i>
+                                        Server overloaded
+                                    </a>
+                                    <div class="dropdown-header text-center">
+                                        <b>Server</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="progressHeader">
+                                            <small>CPU Usage</small>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="progressHeader">
+                                            <small>Memory Usage</small>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <small class="text-muted">11444GB/16384MB</small>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="progressHeader">
+                                            <small>SSD 1 Usage</small>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <small class="text-muted">243GB/256GB</small>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-list"></i>
+                                    <span class="badge badge-pill badge-warning">15</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-header text-center">
+                                        <b>You have 5 pending tasks</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="smallProgressHeader">
+                                            <small>Upgrade NPM & Bower</small>
+                                            <span class="float-right">
+                                                <b>0%</b>
+                                            </span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="smallProgressHeader">
+                                            <small>ReactJS Version</small>
+                                            <span class="float-right">
+                                                <b>25%</b>
+                                            </span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="smallProgressHeader">
+                                            <small>VueJS Version</small>
+                                            <span class="float-right">
+                                                <b>50%</b>
+                                            </span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="smallProgressHeader">
+                                            <small>Add new layouts</small>
+                                            <span class="float-right">
+                                                <b>75%</b>
+                                            </span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="smallProgressHeader">
+                                            <small>Angular 2 Cli Version</small>
+                                            <span class="float-right">
+                                                <b>100%</b>
+                                            </span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item text-center">
+                                        <b>View all tasks</b>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-envelope-open"></i>
+                                    <span class="badge badge-pill badge-info">7</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-header text-center">
+                                        <b>You have 4 messages</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="message">
+                                            <div class="py-3 mr-3 float-left">
+                                                <div class="profile">
+                                                    <img class="messageImg" src="images/profile-1.jpg" alt="">
+                                                    <span class="badge-success profileStatus"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">John Doe</small>
+                                                <small class="text-muted float-right mt-1">Just now</small>
+                                            </div>
+                                            <div class="text-truncate">
+                                                <span class="fa fa-exclamation text-danger"></span>
+                                                Important message
+                                            </div>
+                                            <div class="small text-muted text-truncate">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="message">
+                                            <div class="py-3 mr-3 float-left">
+                                                <div class="profile">
+                                                    <img class="messageImg" src="images/profile-2.jpg" alt="">
+                                                    <span class="badge-warning profileStatus"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">John Doe</small>
+                                                <small class="text-muted float-right mt-1">5 minutes ago</small>
+                                            </div>
+                                            <div class="text-truncate">
+                                                <span class="fa fa-exclamation text-danger"></span>
+                                                Important message
+                                            </div>
+                                            <div class="small text-muted text-truncate">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="message">
+                                            <div class="py-3 mr-3 float-left">
+                                                <div class="profile">
+                                                    <img class="messageImg" src="images/profile-3.jpg" alt="">
+                                                    <span class="badge-danger profileStatus"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">John Doe</small>
+                                                <small class="text-muted float-right mt-1">1:52 PM</small>
+                                            </div>
+                                            <div class="text-truncate">
+                                                <span class="fa fa-exclamation text-danger"></span>
+                                                Important message
+                                            </div>
+                                            <div class="small text-muted text-truncate">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <div class="message">
+                                            <div class="py-3 mr-3 float-left">
+                                                <div class="profile">
+                                                    <img class="messageImg" src="images/profile-4.jpg" alt="">
+                                                    <span class="badge-info profileStatus"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">John Doe</small>
+                                                <small class="text-muted float-right mt-1">4:03 PM</small>
+                                            </div>
+                                            <div class="text-truncate">
+                                                <span class="fa fa-exclamation text-danger"></span>
+                                                Important message
+                                            </div>
+                                            <div class="small text-muted text-truncate">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item text-center">
+                                        <b>View all messages</b>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <img class="imgProfile" src="images/profile-2.jpg" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-header text-center">
+                                        <b>Account</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-bell"></i>
+                                        Updates
+                                        <span class="badge badge-info">42</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-envelope"></i>
+                                        Messages
+                                        <span class="badge badge-success">42</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-tasks"></i>
+                                        Tasks
+                                        <span class="badge badge-danger">42</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-comments"></i>
+                                        Comments
+                                        <span class="badge badge-warning">42</span>
+                                    </a>
+                                    <div class="dropdown-header text-center">
+                                        <b>Settings</b>
+                                    </div>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-user"></i>
+                                        Profile
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-wrench"></i>
+                                        Settings
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        Payments
+                                        <span class="badge badge-dark">42</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-file"></i>
+                                        Projects
+                                        <span class="badge badge-primary">42</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        Lock Account
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-lock"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-info rightBtn">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <content class="wrapper">
+        <div id="leftBar">
+            <nav class="leftSidebarNav">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Dashboard
+                            <span class="badge badge-info">NEW</span>
+                        </a>
+                    </li>
+                    <li class="nav-title">Theme</li>
+                    <li class="nav-item">
+                        <a href="colors.html" class="nav-link">
+                            <i class="fas fa-tint"></i>
+                            Colors
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="typography.html" class="nav-link">
+                            <i class="fas fa-pencil-alt"></i>
+                            Typography
+                        </a>
+                    </li>
+                    <li class="nav-title">Components</li>
+                    <li class="nav-item">
+                        <a href="#baseDropdownMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-puzzle-piece"></i>
+                            Base
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="baseDropdownMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/breadcrumb.html">Breadcrumb</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/cards.html">Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/carousel.html">Carousel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/collapse.html">Collapse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/jumbotron.html">Jumbotron</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/list-group.html">List group</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/navs.html">Navs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/pagination.html">Pagination</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/popovers.html">Popovers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/progress.html">Progress</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/switches.html">Switches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/tabs.html">Tabs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="base/tooltips.html">Tooltips</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#buttonCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-location-arrow"></i>
+                            Buttons
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="buttonCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="buttons/buttons.html">Buttons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="buttons/brandButtons.html">Brand Buttons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="buttons/buttonsGroup.html">Buttons Group</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="buttons/dropdowns.html">Dropdowns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="buttons/loadingButtons.html">Loading buttons</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="charts.html" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            Charts
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#editorsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-code    "></i>
+                            Editors
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="editorsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="editors/codeEditor.html">Code Editor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="editors/markdown.html">Markdown</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="editors/richTextEditor.html">Rich Text Editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#formsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="far fa-edit    "></i>
+                            Forms
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="formsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="forms/basicForms.html">Basic Forms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="forms/advanced.html">Advanced</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="forms/validation.html">Validation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="googleMaps.html" class="nav-link">
+                            <i class="far fa-map    "></i>
+                            Google Maps
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#iconsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="far fa-star    "></i>
+                            Icons
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="iconsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="icons/CoreIcons.html">CoreUI Icons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="icons/flags.html">Flags</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="icons/fontAwesome.html">Font Awesome</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="icons/simpleLineIcons.html">Simple Line Icons</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#notificationsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="far fa-bell"></i>
+                            Notifications
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="notificationsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications/alerts.html">Alerts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications/badge.html">Badge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications/modals.html">Modals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications/toastr.html">Toastr</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pluginsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-bolt"></i>
+                            Plugins
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="pluginsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins/calendar.html">Calendar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins/draggable.html">Draggable</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins/sliders.html">Sliders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins/spinners.html">Spinners</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tablesCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-list    "></i>
+                            Tables
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="tablesCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="tables/standardTables.html">Standard Tables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tables/dataTables.html">Data Tables</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="widgets.html" class="nav-link">
+                            <i class="fas fa-calculator"></i>
+                            Widgets
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                    </li>
+                    <li class="nav-title">Extras</li>
+                    <li class="nav-item">
+                        <a href="#pagesCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="far fa-star"></i>
+                            Pages
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="pagesCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/register.html">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/error404.html">Error 404</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/error500.html">Error 500</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#appsCollapseMenuLink" class="nav-link dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-database"></i>
+                            Apps
+                            <i class='fas fa-angle-left rotate float-right'></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="appsCollapseMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#invoicingCollapseMenu" data-toggle="collapse" aria-expanded="false">
+                                    Invoicing
+                                </a>
+                                <ul class="collapse list-unstyled" id="invoicingCollapseMenu">
+                                    <li class="nav-item">
+                                        <a href="apps/invoicing/invoice.html" class="nav-link">Invoice</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#emailCollapseMenu" data-toggle="collapse" aria-expanded="false">
+                                    Email
+                                </a>
+                                <ul class="collapse list-unstyled" id="emailCollapseMenu">
+                                    <li class="nav-item">
+                                        <a href="apps/email/inbox.html" class="nav-link">Inbox</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="apps/email/message.html" class="nav-link">Message</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="apps/email/compose.html" class="nav-link">Compose</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-title">Labels</li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-label">
+                            <i class="fas fa-circle text-danger"></i>
+                            Label danger
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-label">
+                            <i class="fas fa-circle text-info"></i>
+                            Label info
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-label">
+                            <i class="fas fa-circle text-warning"></i>
+                            Label warning
+                        </a>
+                    </li>
+                    <li class="nav-title">System utilization</li>
+                    <li class="nav-item">
+                        <div class="progressBar">
+                            <div class="progressHeader">
+                                <small>CPU Usage</small>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="progressBar">
+                            <div class="progressHeader">
+                                <small>Memory Usage</small>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="text-muted">11444GB/16384MB</small>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="progressBar">
+                            <div class="progressHeader">
+                                <small>SSD 1 Usage</small>
+                            </div>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="text-muted">243GB/256GB</small>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <button class="leftBarMinimizer" type="button"></button>
+        </div>
+        <div class="mainContent">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        Home
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Admin</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    <li class="breadcrumbMenu">
+                        <div class="btn-group" role="group" aria-label="buttonMenu">
+                            <a href="#" class="btn">
+                                <i class="far fa-comment-alt"></i>
+                            </a>
+                            <a href="#" class="btn">
+                                <i class="fas fa-chart-line"></i>
+                                Dashboard
+                            </a>
+                            <a href="#" class="btn">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-primary">
+                            <div class="card-body">
+                                <div class="btn-group float-right">
+                                    <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                                <div class="countMembers">9.823</div>
+                                <span>Members online</span>
+                            </div>
+                            <div class="memberChartWrapper mt-2 mx-2">
+                                <canvas id="cardChart-1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-info">
+                            <div class="card-body">
+                                <div class="btn-group float-right">
+                                    <button type="button" class="btn p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="countMembers">9.823</div>
+                                <span>Members online</span>
+                            </div>
+                            <div class="memberChartWrapper mt-2 mx-2">
+                                <canvas id="cardChart-2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-warning">
+                            <div class="card-body">
+                                <div class="btn-group float-right">
+                                    <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                                <div class="countMembers">9.823</div>
+                                <span>Members online</span>
+                            </div>
+                            <div class="memberChartWrapper mt-2">
+                                <canvas id="cardChart-3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-danger">
+                            <div class="card-body">
+                                <div class="btn-group float-right">
+                                    <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                                <div class="countMembers">9.823</div>
+                                <span>Members online</span>
+                            </div>
+                            <div class="memberChartWrapper mt-2 mx-2">
+                                <canvas id="cardChart-4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <h4 class="card-title mb-0">Traffic</h4>
+                                        <div class="small text-muted">November 2017</div>
+                                    </div>
+                                    <div class="col-sm-7 d-none d-md-block">
+                                        <button type="button" class="btn btn-primary float-right">
+                                            <i class="fas fa-cloud-download-alt"></i>
+                                        </button>
+                                        <div class="btn-group btn-group-toggle float-right mr-3" data-toggle="buttons">
+                                            <label class="btn btn-outline-secondary">
+                                                <input type="radio" name="options" id="option1" autocomplete="off"> Day
+                                            </label>
+                                            <label class="btn btn-outline-secondary active">
+                                                <input type="radio" name="options" id="option2" autocomplete="off" checked=""> Month
+                                            </label>
+                                            <label class="btn btn-outline-secondary">
+                                                <input type="radio" name="options" id="option3" autocomplete="off"> Year
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="traffChartWrapper">
+                                    <canvas id="traffChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row text-center">
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="text-muted">Visits</div>
+                                        <strong>29.703 Users (40%)</strong>
+                                        <div class="progress progress-xs mt-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="text-muted">Unique</div>
+                                        <strong>24.093 Users (20%)</strong>
+                                        <div class="progress progress-xs mt-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="text-muted">Pageviews</div>
+                                        <strong>78.706 Views (60%)</strong>
+                                        <div class="progress progress-xs mt-2">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="text-muted">New Users</div>
+                                        <strong>22.123 Users (80%)</strong>
+                                        <div class="progress progress-xs mt-2">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="text-muted">Bounce Rate</div>
+                                        <strong>40.15%</strong>
+                                        <div class="progress progress-xs mt-2">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card socialCard">
+                            <div class="card-header socialHeader bg-primary">
+                                <i class="fab fa-facebook-f"></i>
+                                <div class="socialChartWrapper">
+                                    <canvas id="chartFb"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-body socialBody">
+                                <div class="bodyCount">
+                                    <div class="bodyText">89k</div>
+                                    <div class="text-uppercase text-muted small">friends</div>
+                                </div>
+                                <div class="bodyCount">
+                                    <div class="bodyText">459</div>
+                                    <div class="text-uppercase text-muted small">feeds</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card socialCard">
+                            <div class="card-header socialHeader bg-info">
+                                <i class="fab fa-twitter"></i>
+                                <div class="socialChartWrapper">
+                                    <canvas id="chartTwitter"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-body socialBody">
+                                <div class="bodyCount">
+                                    <div class="bodyText">973k</div>
+                                    <div class="text-uppercase text-muted small">followers</div>
+                                </div>
+                                <div class="bodyCount">
+                                    <div class="bodyText">1.792</div>
+                                    <div class="text-uppercase text-muted small">tweets</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card socialCard">
+                            <div class="card-header socialHeader bg-primary">
+                                <i class="fab fa-linkedin-in"></i>
+                                <div class="socialChartWrapper">
+                                    <canvas id="chartIn"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-body socialBody">
+                                <div class="bodyCount">
+                                    <div class="bodyText">500+</div>
+                                    <div class="text-uppercase text-muted small">contacts</div>
+                                </div>
+                                <div class="bodyCount">
+                                    <div class="bodyText">292</div>
+                                    <div class="text-uppercase text-muted small">feeds</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card socialCard">
+                            <div class="card-header socialHeader bg-danger">
+                                <i class="fab fa-google-plus-g"></i>
+                                <div class="socialChartWrapper">
+                                    <canvas id="chartGoogle"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-body socialBody">
+                                <div class="bodyCount">
+                                    <div class="bodyText">894</div>
+                                    <div class="text-uppercase text-muted small">followers</div>
+                                </div>
+                                <div class="bodyCount">
+                                    <div class="bodyText">92</div>
+                                    <div class="text-uppercase text-muted small">circles</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 traffSales">
+                        <div class="card">
+                            <div class="card-header">
+                                Traffic & Sales
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="clientHistory clientInfo">
+                                                    <small class="text-muted">New Clients</small>
+                                                    <br>
+                                                    <strong class="h4">9,123</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="clientHistory clientDanger">
+                                                    <small class="text-muted">Recuring Clients</small>
+                                                    <br>
+                                                    <strong class="h4">22,643</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mt-0">
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Monday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Tuesday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Wednesday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Thursday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Friday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Saturday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-4">
+                                            <div class="progressHeader text-muted">
+                                                <span class="progressText">Sunday</span>
+                                            </div>
+                                            <div class="progressBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 9%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="clientHistory clientWarning">
+                                                    <small class="text-muted">Pageviews</small>
+                                                    <br>
+                                                    <strong class="h4">78,623</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="clientHistory clientSuccess">
+                                                    <small class="text-muted">Organic</small>
+                                                    <br>
+                                                    <strong class="h4">49,123</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mt-0">
+                                        <div class="progressGroup">
+                                            <div class="progressGroupHeader">
+                                                <i class="fas fa-user"></i>
+                                                <span>Male</span>
+                                                <div class="ml-auto font-weight-bold">43%</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup mb-5">
+                                            <div class="progressGroupHeader">
+                                                <i class="fas fa-user"></i>
+                                                <span>Female</span>
+                                                <div class="ml-auto font-weight-bold">37%</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 37%" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup">
+                                            <div class="progressGroupHeader align-items-end">
+                                                <i class="fas fa-globe"></i>
+                                                <span>Organic Search</span>
+                                                <div class="ml-auto font-weight-bold mr-2">191.235</div>
+                                                <div class="text-muted small">(56%)</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup">
+                                            <div class="progressGroupHeader align-items-end">
+                                                <i class="fab fa-facebook-f"></i>
+                                                <span>Facebook</span>
+                                                <div class="ml-auto font-weight-bold mr-2">51.235</div>
+                                                <div class="text-muted small">(15%)</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup">
+                                            <div class="progressGroupHeader align-items-end">
+                                                <i class="fab fa-twitter"></i>
+                                                <span>Twitter</span>
+                                                <div class="ml-auto font-weight-bold mr-2">37.235</div>
+                                                <div class="text-muted small">(11%)</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="progressGroup">
+                                            <div class="progressGroupHeader align-items-end">
+                                                <i class="fab fa-linkedin-in"></i>
+                                                <span>LinkedIn</span>
+                                                <div class="ml-auto font-weight-bold mr-2">27.235</div>
+                                                <div class="text-muted small">(8%)</div>
+                                            </div>
+                                            <div class="progressGroupBars">
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <table class="table table-responsive-sm table-hover mb-0 mx-3 tableOutlineBorder">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    <i class="fas fa-users"></i>
+                                                </th>
+                                                <th>User</th>
+                                                <th class="text-center">Country</th>
+                                                <th>Usage</th>
+                                                <th class="text-center">Payment Method</th>
+                                                <th>Activity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/user-1.jpg" alt="">
+                                                        <span class="badge-success userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Yiorgos Avraamu</div>
+                                                    <div class="small text-muted">
+                                                        <span>New</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/us.png" title="us">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>50%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-cc-mastercard"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>10 sec ago</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/user-2.jpg" alt="">
+                                                        <span class="badge-danger userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Avram Tarasios</div>
+                                                    <div class="small text-muted">
+                                                        <span>Recurring</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/bra.png" title="bra">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>10%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-cc-visa"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>5 minutes ago</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/user-3.jpg" alt="">
+                                                        <span class="badge-warning userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Quintin Ed</div>
+                                                    <div class="small text-muted">
+                                                        <span>New</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/india.png" title="india">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>74%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-stripe"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>1 hours ago</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/profile-4.jpg" alt="">
+                                                        <span class="badge-secondary userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Enéas Kwadwo</div>
+                                                    <div class="small text-muted">
+                                                        <span>New</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/fra.png" title="fra">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>98%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-paypal"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>Last month</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/profile-3.jpg" alt="">
+                                                        <span class="badge-success userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Agapetus Tadeáš</div>
+                                                    <div class="small text-muted">
+                                                        <span>New</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/spain.png" title="spain">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>22%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-google-wallet"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>Last week</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="userProfile">
+                                                        <img class="userImg" src="images/profile-2.jpg" alt="">
+                                                        <span class="badge-danger userStatus"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Friderik Dávid</div>
+                                                    <div class="small text-muted">
+                                                        <span>New</span>
+                                                        | Registered: Jan 1, 2015
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="images/flags/ger.png" title="germany">
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <strong>43%</strong>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="fab fa-cc-amex"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Last login</div>
+                                                    <strong>Yesterday</strong>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rightBar" class="active">
+            <nav class="navbar navbar-expand-md">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-toggle="tab" role="tab" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="tab" role="tab" aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-comment-alt"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="tab" role="tab" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tabContent">
+                <div class="list-group">
+                    <div class="list-group-item text-muted bg-light listGroupHeader">Today</div>
+                    <div class="list-group-item listGroupDivider">
+                        <div class="timeline float-right">
+                            <img src="images/profile-1.jpg" alt="timelineImg">
+                        </div>
+                        <span>
+                            Meeting with
+                            <strong>Lucas</strong>
+                        </span>
+                        <small class="text-muted mr-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="timeline float-right">
+                            <img src="images/profile-3.jpg" alt="timelineImg">
+                        </div>
+                        <span>
+                            Skype with
+                            <strong>Megan</strong>
+                        </span>
+                        <small class="text-muted mr-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            4 - 5pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="fab fa-skype"></i>
+                            Online
+                        </small>
+                    </div>
+                    <div class="list-group-item text-muted bg-light listGroupHeader">Tomorrow</div>
+                    <div class="list-group-item listGroupDivider">
+                        <span>
+                            New UI Project -
+                            <strong>deadline</strong>
+                        </span>
+                        <small class="text-muted mr-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            10 - 11pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="fas fa-home"></i>
+                            creativeLabs HQ
+                        </small>
+                        <div class="meeting mt-2">
+                            <div class="meetingImg">
+                                <img src="images/profile-1.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-2.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-3.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item listGroupDivider">
+                        <span>
+                            <strong>#10 Startups.Garden</strong>
+                            Meetup
+                        </span>
+                        <small class="text-muted mr-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item">
+                        <span>
+                            <strong>Team meeting</strong>
+                        </span>
+                        <small class="text-muted mr-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            4 - 6pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="fas fa-home"></i>
+                            creativeLabs HQ
+                        </small>
+                        <div class="meeting mt-2">
+                            <div class="meetingImg">
+                                <img src="images/profile-1.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-2.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-3.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-4.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-2.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-1.jpg" alt="">
+                            </div>
+                            <div class="meetingImg">
+                                <img src="images/profile-4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+
+    <footer class="bottomFooter">
+        <div>
+            <a href="#">CoreUI Pro</a>
+            <span>© 2018 creativeLabs.</span>
+        </div>
+        <div class="ml-auto">
+            <span>Powered by</span>
+            <a href="#">CoreUI Pro</a>
+        </div>
+    </footer>
+
+  
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/chartConfig.js"></script>
+</body>
+
+</html>

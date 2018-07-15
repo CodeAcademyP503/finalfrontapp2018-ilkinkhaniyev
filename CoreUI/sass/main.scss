@@ -1,0 +1,1056 @@
+body {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(47,53,58);
+    color: #e4e7ea;
+}
+
+// Header styles here
+
+#topHeader{
+    height: 60px;
+    background-color: rgb(58,65,73);
+    border-bottom:1px solid #23282c;
+    .container-fluid{
+        .row{
+            line-height: 2;
+            .col-md-2{
+                .logoImg{
+                    width: 100%
+                }
+                .leftBtn{
+                    background-color: rgb(58,65,73);
+                    border: none;
+                    outline: none;
+                    i{
+                        color: rgb(200,206,211);
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .col-md-6{
+                .navbar{
+                    .nav{
+                        .nav-item{
+                            .nav-link{
+                                color: rgb(200,206,211);
+                                &:hover{
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .col-md-4{
+                .navbar{
+                    justify-content: flex-end;
+                    .nav-item{
+                        .nav-link{
+                            position: relative;
+                            color: rgb(200,206,211);
+                            &:hover{
+                                color: white;
+                            }
+                            i{
+                                position: absolute;
+                                top: 15px;
+                            }
+                            .badge{
+                                position: relative;
+                                top: -10px;
+                                right: -6px;
+                            }
+                            .imgProfile{
+                                height: 35px;
+                                border-radius: 20px;
+                                line-height: 2;
+                            }
+                        }
+                        .dropdown-menu{
+                            padding: 0px;
+                            width: 270px;
+                            position: absolute;
+                            top: 35px;
+                            background-color:rgb(58,65,73);
+                            border-color: #23282c;
+                            .dropdown-header{
+                                color: rgb(200,206,211);
+                                background-color: #343b41;
+                                border-bottom: 1px solid #23282c;
+                            }
+                            .dropdown-item{
+                                padding: 8px 20px;
+                                color: rgb(200,206,211);
+                                border-bottom: 1px solid #23282c;
+                                &:last-child{
+                                    border-bottom: none;
+                                }
+                                &:hover{
+                                    background-color: rgb(47,53,58);
+                                }
+                                i{
+                                    margin-right: 10px;
+                                }
+                                .badge{
+                                    position: absolute;
+                                    right: 10px;
+                                    margin-top: 10px;
+                                }
+                                .progressHeader{
+                                    small{
+                                        font-size: 12px;
+                                        text-transform: uppercase;
+                                        font-weight: bold;
+                                    }
+                                }
+                                .progress{
+                                    height: 4px;
+                                }
+                                .message{
+                                    .profile{
+                                        position: relative;
+                                        display: inline-block;
+                                        width: 36px;
+                                        height: 36px;
+                                        box-sizing: border-box;
+                                        .messageImg{
+                                            max-width: 100%;
+                                            height: auto;
+                                            border-radius: 18px;
+                                        }
+                                        .profileStatus{
+                                            position: absolute;
+                                            right: 0px;
+                                            bottom: 0px;
+                                            display: block;
+                                            width: 10px;
+                                            height: 10px;
+                                            border: 1px solid #3a4149;
+                                            border-radius: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .rightBtn{
+                        background-color: rgb(58,65,73);
+                        border: none;
+                        outline: none;
+                        i{
+                            color: rgb(200,206,211);
+                            &:hover{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Content styles here
+.wrapper{
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: stretch;
+    #leftBar {
+        min-width: 240px;
+        max-width: 240px;
+        height: 100%;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        z-index: 1;
+        overflow-x: hidden;
+        background: #2f353a;
+        transition: all 0.2s;
+        .leftSidebarNav{
+            .nav{
+                background-color: rgb(58,65,73);
+                li:first-child{
+                    .nav-link{
+                        i{
+                            color: #20a8d8;
+                        }
+                    }
+                }
+                .nav-title{
+                    padding: 15px 10px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-left: 10px;
+                    color: #f3f4f5;
+                }
+                .nav-item{
+                    color: #f3f4f5;
+                    line-height: 1.5;
+                    border-right: 1px solid #23282c;
+                    .dropdown-toggle::after{
+                        content: initial;
+                    }
+                    .nav-link{
+                        padding: 15px 20px;
+                        color: #f3f4f5;
+                        &:hover{
+                            background-color:#20a8d8;
+                            i{
+                                color: #f3f4f5;
+                            }
+                        }
+                        i{
+                            color: #73818f;
+                            margin-right: 10px;
+                        }
+                        span{
+                            color: black;
+                            margin-left: 25px;
+                        }
+                    }
+                    .rotate{
+                        transition: all .3s;
+                    }
+                    .rotate.down{
+                        transform: rotate(-90deg);
+                    }
+                    .nav-label{
+                        padding: 15px 20px;
+                        text-decoration: none;
+                        color: #e4e7ea;
+                    }
+                    .progressBar{
+                        width: 180px;
+                        margin-left: 20px;
+                        .progressHeader{
+                            small{
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+                        }
+                        .progress{
+                            height: 4px;
+                            margin: 5px 0px;
+                            background-color: #5c6873;
+                        }
+                    }
+                }
+            }
+        }
+        .leftBarMinimizer{
+        }
+    }
+    #leftBar.active{
+        margin-left: -240px;
+    }
+    .mainContent{
+        transition: all .1s;
+        width: 100%;
+        margin-left: 240px;
+        margin-right: 0px;
+        .breadcrumb{
+            border-radius: 0;
+            background-color: rgb(58,65,73);
+            border-bottom: 1px solid #23282c;
+            margin-bottom: 25px;
+            margin-top: 60px;
+            .breadcrumb-item{
+                color: #f3f4f5;
+            }
+            .breadcrumbMenu{
+                margin-left: auto;
+                .btn-group{
+                    padding: 0px 20px;
+                    .btn{
+                        padding: 0px 15px;
+                        color: #f3f4f5;
+                    }
+                }
+            }
+        }
+        .container-fluid{
+            .row{
+                .col-sm-6{
+                    .card{
+                        color: white;
+                        border-color: #187da0;
+                        box-sizing: border-box;
+                        margin-bottom: 30px;
+                        .card-body{
+                            height: 75px;
+                            .countMembers{
+                                font-weight: bold;
+                                font-size: 1.2em;
+                            }
+                            span{
+                                font-size: .8em;
+                            }
+                            .btn-group{
+                                .btn{
+                                    background-color: transparent;
+                                    color: white;
+                                }
+                                .dropdown-toggle{
+                                    color: white;
+                                }
+                                .dropdown-menu{
+                                    margin: 0;
+                                    padding: 0;
+                                    background-color: #3a4149;
+                                    border: 1px solid #23282c;
+                                    .dropdown-item{
+                                        color: #e4e7ea;
+                                        padding: 10px 20px;
+                                        border-bottom: 1px solid #23282c;
+                                        &:last-child{
+                                            border-bottom: none;
+                                        }
+                                        &:hover{
+                                            background-color: #2f353a;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .memberChartWrapper{
+                            height: 90px;
+                        }
+                    }
+                }
+                .col-md-12{
+                    width: 800px;
+                    .card{
+                        margin-bottom: 30px;
+                        background-color: #3a4149;
+                        border: 1px solid #23282c; 
+                        .card-body{
+                            .row{
+                                .col-sm-5{
+                                    h4{
+                                        color: #e4e7ea;
+                                    }
+                                }
+                            }
+                            .traffChartWrapper{
+                                margin-top: 40px;
+                                #traffChart{
+                                    height: 350px;
+                                }
+                            }
+                        }
+                        .card-footer{
+                            .row{
+                                .col-md-3{
+                                    max-width: 20%;
+                                    font-size: .9em;
+                                    color: #e4e7ea;
+                                    line-height: 1.5;
+                                    .progress{
+                                        height: 4px;
+                                        background-color: #515b65;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .socialCard{
+                    background-color: #3a4149;
+                    border: 1px solid #23282c !important;
+                    .socialHeader{
+                        position: relative;
+                        padding: 0;
+                        height: 100px;
+                        background-color: #3b5998;
+                        i{
+                            font-size: 2em;
+                            position: absolute;
+                            top: 34%;
+                            left: 46%;
+                        }
+                        .socialChartWrapper{
+                            height: 100px;
+                        }
+                    }
+                    .socialBody{
+                        display: flex;
+                        flex-direction: row;
+                        padding: 10px 0px;
+                        text-align: center;
+                        .bodyCount{
+                            flex: 1;
+                            display: inline-block;
+                            border-right: 1px solid #23282c;
+                            &:last-child{
+                                border: none;
+                            }
+                            .bodyText{
+                                // padding: 0px 25px;
+                                font-size: 1.3em;
+                                color: #e4e7ea;
+                                line-height: 1.5;
+                            }
+                            .small{
+                                font-size: .7em;
+                            }
+                        }
+                    }
+                }
+                .traffSales{
+                    .card{
+                        .card-header{
+                            font-size: .9em;
+                            background-color: #343b41;
+                            color: #e4e7ea;
+                            border-bottom: 1px solid #23282c;
+                        }
+                        .card-body{
+                            .row{
+                                .col-sm-6{
+                                    .row{
+                                        .col-sm-6{
+                                           .clientHistory{
+                                               padding: 0px 15px;
+                                               margin: 15px 0px;
+                                               border-left: 4px solid #23282c;
+                                               border-radius: 4px;
+                                               small{
+                                                   font-size: .8em;
+                                               }
+                                               .h4{
+                                                   color: #e4e7ea;
+                                               }
+                                           }
+                                           .clientInfo{
+                                               border-left-color:#63c2de; 
+                                           }
+                                           .clientDanger{
+                                               border-left-color: #f86c6b;
+                                           }
+                                           .clientWarning{
+                                               border-left-color: #ffc107;
+                                           }
+                                           .clientSuccess{
+                                               border-left-color: #4dbd74;
+                                           }
+                                        }
+                                    }
+                                    .progressGroup{
+                                        display: flex;
+                                        flex-flow: row wrap;
+                                        margin-bottom: 15px;
+                                        .progressHeader{
+                                            flex: 0 0 100px;
+                                            align-self: center;
+                                            .progressText{
+                                                font-size: .8em;
+                                            }
+                                        }
+                                        .progressBars{
+                                            flex-grow: 1;
+                                            align-self: center;
+                                            .progress{
+                                                background-color: #515b65;
+                                                margin-bottom: 2px;
+                                                &:last-child{
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                        }
+                                        .progressGroupHeader{
+                                            display: flex;
+                                            flex-basis: 100%;
+                                            align-items: flex-end;
+                                            margin-bottom: 4.5px;
+                                            i{
+                                                font-size: 20px;
+                                                margin: 0px 15px 0 4px;
+                                                color: #e4e7ea;
+                                            }
+                                            span{
+                                                font-size: .9em;
+                                                color: #e4e7ea;
+                                            }
+                                        }
+                                        .progressGroupBars{
+                                            flex-basis: 100%;
+                                            align-self: center;
+                                            .progress{
+                                                background-color: #515b65;
+                                                margin-bottom: 2px;
+                                                &:last-child{
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .table{
+                                    .thead-light{
+                                        th{
+                                            background-color: #343b41;
+                                            border-color: #23282c;
+                                            color: #e4e7ea;
+                                            font-size: .9em;
+                                        }
+                                    }
+                                }
+                                .tableOutlineBorder{
+                                    border: 1px solid #23282c;
+                                }
+                                tbody{
+                                    tr{
+                                        td{
+                                            border-bottom: 1px solid #23282c;
+                                            font-size: .9em;
+                                            .userProfile{
+                                                position: relative;
+                                                display: inline-block;
+                                                width: 36px;
+                                                height: 36px;
+                                                box-sizing: border-box;
+                                                .userImg{
+                                                    max-width: 100%;
+                                                    height: auto;
+                                                    border-radius: 18px;
+                                                }
+                                                .userStatus{
+                                                    position: absolute;
+                                                    right: 5px;
+                                                    bottom: 5px;
+                                                    display: block;
+                                                    width: 10px;
+                                                    height: 10px;
+                                                    border: 1px solid #3a4149;
+                                                    border-radius: 18px;
+                                                }
+                                            }
+                                            img{
+                                                width: 28px;
+                                                height: 25px;
+                                            }
+                                            .progress{
+                                                background-color: #515b65;
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                            i{
+                                                font-size: 25px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mainContent.left{
+        margin-left: 0px;
+    }
+    .mainContent.right{
+        margin-right: 300px;
+    }
+    #rightBar {
+        min-width: 300px;
+        max-width: 300px;
+        height: 100%;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: all 0.2s;
+        .navbar{
+            background-color: rgb(58,65,73);
+            padding: 5px;
+            border-left: 1px solid #23282c;
+            border-bottom: 1px solid #23282c; 
+            .nav-tabs{
+                
+                border-color: #23282c;
+                border-bottom: 1px solid #23282c;
+                .nav-item{
+                    .nav-link{
+                        background-color:rgb(58,65,73);
+                        border: none;
+                        color: rgb(200,206,211);
+                    }
+                    .navlink.active{
+                        color: #20a8d8;
+                    }
+                }
+            }
+        }
+        .tabContent{
+            position: relative;
+            width: 100%;
+            // height: 100vh;
+            border: 1px solid #23282c;
+            border-top:0;
+            .list-group{
+                .listGroupHeader{
+                    font-size: 13px;
+                    text-align: center;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+                .listGroupDivider::before{
+                    position: absolute;
+                    bottom: -1px;
+                    right:16px; 
+                    width: 90%;
+                    height: 1px;
+                    content: "";
+                    background-color: #262a2e;
+
+                }
+                .list-group-item{
+                    position: relative;
+                    margin-bottom: 1px;
+                    padding: 15px 20px;
+                    border-radius: 0;
+                    background-color: #343b41;
+                    border: 1px solid #23282c;
+                    border-top: 0;
+                    border-right: 0;
+                    border-bottom: 0;
+                    &:nth-child(1){
+                        border-left: 4px solid #73818f;
+                    }
+                    &:nth-child(2){
+                        border-left: 4px solid #ffc107;
+                    }
+                    &:nth-child(3){
+                        border-left: 4px solid #63c2de;
+                    }
+                    &:nth-child(4){
+                        border-left: 4px solid #73818f;
+                    }
+                    &:nth-child(5){
+                        border-left: 4px solid #f86c6b;
+                    }
+                    &:nth-child(6){
+                        border-left: 4px solid #4dbd74;
+                    }
+                    &:nth-child(7){
+                        border-left: 4px solid #20a8d8;
+                    }
+                    .timeline{
+                        position: relative;
+                        width: 36px;
+                        height: 36px;
+                        img{
+                            max-width: 100%;
+                            border-radius: 20px;
+                        }
+                    }
+                    span{
+                        display: block;
+                        font-size: 15px;
+                        color: #f3f4f5;
+                    }
+                    .meeting{
+                        .meetingImg{
+                            position: relative;
+                            display: inline-block;
+                            width: 22px;
+                            height: 22px;
+                            margin-right: -10px;
+                            transition: margin-right .25s;
+                            &:hover{
+                                margin-right: 0px;
+                            }
+                            img{
+                                max-width: 100%;
+                                height: auto;
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #rightBar.active{
+        margin-right: -300px;
+    }
+
+}
+
+//Footer styles here
+.bottomFooter{
+    margin-left: 240px;
+    margin-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 50px;
+    align-items: center;
+    padding: 20px 15px;
+    color: #e4e7ea;
+    background: #3a4149;
+    border-top: 1px solid #23282c;
+}
+.bottomFooter.left{
+    margin-left: 0px;
+}
+
+.bottomFooter.right{
+    margin-right: 300px;
+}
+
+@media screen and (max-width: 1100px) {
+    #topHeader{
+        height: 60px;
+        background-color: rgb(58,65,73);
+        border-bottom:1px solid #23282c;
+        .container-fluid{
+            .row{
+                line-height: 2;
+                .col-md-2{
+                    .logoImg{
+                        display: none;
+                    }
+                    .leftBtn{
+                        background-color: rgb(58,65,73);
+                        border: none;
+                        outline: none;
+                        i{
+                            color: rgb(200,206,211);
+                            &:hover{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .col-md-6{
+                    .navbar{
+                        display: none;
+                    }
+                }
+                .col-md-4{
+                    .navbar{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .mainContent{
+        width: 100%;
+        .breadcrumb{
+            border-radius: 0;
+            background-color: rgb(58,65,73);
+            border-bottom: 1px solid #23282c;
+            margin-bottom: 25px;
+            .breadcrumb-item{
+                color: #f3f4f5;
+            }
+            .breadcrumbMenu{
+                display: none;
+            }
+        }
+        .container-fluid{
+            .row{
+                .col-sm-6{
+                    .card{
+                        color: white;
+                        border-color: #187da0;
+                        box-sizing: border-box;
+                        margin-bottom: 30px;
+                        .card-body{
+                            height: 75px;
+                            .countMembers{
+                                font-weight: bold;
+                                font-size: 1.2em;
+                            }
+                            span{
+                                font-size: .8em;
+                            }
+                            .btn-group{
+                                .btn{
+                                    background-color: transparent;
+                                    color: white;
+                                }
+                                .dropdown-toggle{
+                                    color: white;
+                                }
+                                .dropdown-menu{
+                                    margin: 0;
+                                    padding: 0;
+                                    background-color: #3a4149;
+                                    border: 1px solid #23282c;
+                                    .dropdown-item{
+                                        color: #e4e7ea;
+                                        padding: 10px 20px;
+                                        border-bottom: 1px solid #23282c;
+                                        &:last-child{
+                                            border-bottom: none;
+                                        }
+                                        &:hover{
+                                            background-color: #2f353a;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .memberChartWrapper{
+                            height: 90px;
+                        }
+                    }
+                }
+                .col-md-12{
+                    width: 800px;
+                    .card{
+                        margin-bottom: 30px;
+                        background-color: #3a4149;
+                        border: 1px solid #23282c; 
+                        .card-body{
+                            .row{
+                                .col-sm-5{
+                                    h4{
+                                        color: #e4e7ea;
+                                    }
+                                }
+                            }
+                            .traffChartWrapper{
+                                margin-top: 40px;
+                                #traffChart{
+                                    height: 350px;
+                                }
+                            }
+                        }
+                        .card-footer{
+                            .row{
+                                .col-md-3{
+                                    max-width: 20%;
+                                    font-size: .9em;
+                                    color: #e4e7ea;
+                                    line-height: 1.5;
+                                    .progress{
+                                        height: 4px;
+                                        background-color: #515b65;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .socialCard{
+                    background-color: #3a4149;
+                    border: 1px solid #23282c !important;
+                    .socialHeader{
+                        position: relative;
+                        padding: 0;
+                        height: 100px;
+                        background-color: #3b5998;
+                        i{
+                            font-size: 2em;
+                            position: absolute;
+                            top: 34%;
+                            left: 46%;
+                        }
+                        .socialChartWrapper{
+                            height: 100px;
+                        }
+                    }
+                    .socialBody{
+                        display: flex;
+                        flex-direction: row;
+                        padding: 10px 0px;
+                        text-align: center;
+                        .bodyCount{
+                            flex: 1;
+                            display: inline-block;
+                            border-right: 1px solid #23282c;
+                            &:last-child{
+                                border: none;
+                            }
+                            .bodyText{
+                                // padding: 0px 25px;
+                                font-size: 1.3em;
+                                color: #e4e7ea;
+                                line-height: 1.5;
+                            }
+                            .small{
+                                font-size: .7em;
+                            }
+                        }
+                    }
+                }
+                .traffSales{
+                    .card{
+                        .card-header{
+                            font-size: .9em;
+                            background-color: #343b41;
+                            color: #e4e7ea;
+                            border-bottom: 1px solid #23282c;
+                        }
+                        .card-body{
+                            .row{
+                                .col-sm-6{
+                                    .row{
+                                        .col-sm-6{
+                                           .clientHistory{
+                                               padding: 0px 15px;
+                                               margin: 15px 0px;
+                                               border-left: 4px solid #23282c;
+                                               border-radius: 4px;
+                                               small{
+                                                   font-size: .8em;
+                                               }
+                                               .h4{
+                                                   color: #e4e7ea;
+                                               }
+                                           }
+                                           .clientInfo{
+                                               border-left-color:#63c2de; 
+                                           }
+                                           .clientDanger{
+                                               border-left-color: #f86c6b;
+                                           }
+                                           .clientWarning{
+                                               border-left-color: #ffc107;
+                                           }
+                                           .clientSuccess{
+                                               border-left-color: #4dbd74;
+                                           }
+                                        }
+                                    }
+                                    .progressGroup{
+                                        display: flex;
+                                        flex-flow: row wrap;
+                                        margin-bottom: 15px;
+                                        .progressHeader{
+                                            flex: 0 0 100px;
+                                            align-self: center;
+                                            .progressText{
+                                                font-size: .8em;
+                                            }
+                                        }
+                                        .progressBars{
+                                            flex-grow: 1;
+                                            align-self: center;
+                                            .progress{
+                                                background-color: #515b65;
+                                                margin-bottom: 2px;
+                                                &:last-child{
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                        }
+                                        .progressGroupHeader{
+                                            display: flex;
+                                            flex-basis: 100%;
+                                            align-items: flex-end;
+                                            margin-bottom: 4.5px;
+                                            i{
+                                                font-size: 20px;
+                                                margin: 0px 15px 0 4px;
+                                                color: #e4e7ea;
+                                            }
+                                            span{
+                                                font-size: .9em;
+                                                color: #e4e7ea;
+                                            }
+                                        }
+                                        .progressGroupBars{
+                                            flex-basis: 100%;
+                                            align-self: center;
+                                            .progress{
+                                                background-color: #515b65;
+                                                margin-bottom: 2px;
+                                                &:last-child{
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .table{
+                                    .thead-light{
+                                        th{
+                                            background-color: #343b41;
+                                            border-color: #23282c;
+                                            color: #e4e7ea;
+                                            font-size: .9em;
+                                        }
+                                    }
+                                }
+                                .tableOutlineBorder{
+                                    border: 1px solid #23282c;
+                                }
+                                tbody{
+                                    tr{
+                                        td{
+                                            border-bottom: 1px solid #23282c;
+                                            font-size: .9em;
+                                            .userProfile{
+                                                position: relative;
+                                                display: inline-block;
+                                                width: 36px;
+                                                height: 36px;
+                                                box-sizing: border-box;
+                                                .userImg{
+                                                    max-width: 100%;
+                                                    height: auto;
+                                                    border-radius: 18px;
+                                                }
+                                                .userStatus{
+                                                    position: absolute;
+                                                    right: 5px;
+                                                    bottom: 5px;
+                                                    display: block;
+                                                    width: 10px;
+                                                    height: 10px;
+                                                    border: 1px solid #3a4149;
+                                                    border-radius: 18px;
+                                                }
+                                            }
+                                            img{
+                                                width: 28px;
+                                                height: 25px;
+                                            }
+                                            .progress{
+                                                background-color: #515b65;
+                                            }
+                                            .progress-xs{
+                                                height: 4px;
+                                            }
+                                            i{
+                                                font-size: 25px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
